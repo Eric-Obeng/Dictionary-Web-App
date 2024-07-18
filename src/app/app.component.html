@@ -1,6 +1,6 @@
-<ng-container class="main-container">
-  <app-header />
-  <app-search />
-  <app-word-detail />
+<div class="main-container">
+  <app-header (fontChange)="onFontChange($event)" />
+  <app-search (wordData)="onWordDataFetched($event)" />
+  <app-word-detail [wordDetails]="currentWordDetails" />
   <app-footer />
-</ng-container>
+</div>
