@@ -1,1 +1,28 @@
-<p>word-detail works!</p>
+<section class="word-detail__container">
+  @if (wordDetails) {
+  <section class="word-detail">
+    <div class="word-div">
+      <h2 class="word">{{ wordDetails.word }}</h2>
+      <p class="pronouce">{{ wordDetails.phonetic }}</p>
+    </div>
+    <button
+      class="play-word"
+      *ngIf="wordDetails.phonetics && wordDetails.phonetics.length"
+      (click)="playAudio()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="75"
+        height="75"
+        viewBox="0 0 75 75"
+      >
+        <g fill="#A445ED" fill-rule="evenodd">
+          <circle cx="37.5" cy="37.5" r="37.5" opacity=".25" />
+          <path d="M29 27v21l21-10.5z" />
+        </g>
+      </svg>
+    </button>
+  </section>
+  <app-meaning [meanings]="wordDetails.meanings" />
+  }
+</section>

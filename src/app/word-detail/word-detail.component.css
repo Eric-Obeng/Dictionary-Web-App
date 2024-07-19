@@ -1,0 +1,44 @@
+.word-detail__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.word-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.word-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+}
+
+.word-div .word {
+  font-size: var(--ft-size-lg);
+}
+
+.word-div .pronouce {
+  color: var(--clr-purple-light);
+}
+
+.word-detail .play-word {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.word-detail .play-word svg:hover {
+  fill: red;
+}
+
+.play-word svg {
+  height: 48px;
+  width: 48px;
+}

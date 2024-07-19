@@ -1,8 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "incosolata";
+  src: url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("./assets/fonts/inter/Inter-VariableFont_slnt\,wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lora";
+  src: url("/assets/fonts/lora/Lora-VariableFont_wght.ttf") format("truetype"),
+    url("/assets/fonts/lora/Lora-Italic-VariableFont_wght.ttf")
+      format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 *,
 ::after,
 ::before {
   margin: unset;
   padding: unset;
   box-sizing: border-box;
+}
+
+:root {
+  /* dark colors */
+  --bg-primary: #050505;
+  --bg-color-1: #1f1f1f;
+  --bg-color-2: #2d2d2d;
+  --bg-color-3: #3a3a3a;
+
+  /* grey colors */
+  --grey-primary: #757575;
+  --grey-acent: #e9e9e9;
+  --grey-light: #f4f4f4;
+  --white: #ffffff;
+
+  --clr-purple-light: #a445ed;
+  --clr-orange: #ff5252;
+
+  /* fonts */
+  --font-sans-serif: "inter", sans-serif;
+  --font-serif: "lora", serif;
+  --font-mono: "inconsolata", monospace;
+
+  --global-font-family: var(--font-sans-serif);
+
+  --ft-size-sm: 14px;
+  --ft-size-md: 18px;
+  --ft-size-lg: 32px;
+}
+
+body {
+  color: var(--bg-color-2);
+  font-family: var(--global-font-family);
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml;base64,...") no-repeat right center;
+  background-size: 1rem;
+  padding-right: 2rem;
+  font-size: var(--ft-size-sm);
+  text-align: center;
+}
+
+body.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--white);
+}
+
+
+body.dark-mode .moon svg {
+  stroke: var(--clr-purple);
 }
