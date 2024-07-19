@@ -1,1 +1,46 @@
-<p>meaning works!</p>
+<section class="word-meaning-container">
+  @for (meaning of meanings; track $index) {
+
+  <div class="col-1">
+    <div class="noun">
+      <p>{{ meaning.partOfSpeech }}</p>
+      <hr />
+    </div>
+    <div class="col-1-meaning">
+      <p>Meaning</p>
+      <ul>
+        @for (definition of meaning.definitions; track $index) {
+        <li>{{ definition.definition }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-2">
+    @if (meaning.synonyms.length) {
+    <p class="title">Synonyms</p>
+    <p class="syn">{{ meaning.synonyms.join(", ") }}</p>
+    }
+  </div>
+  <div class="col-2">
+    @if (meaning.antonyms.length) {
+    <p class="title">Antonyms</p>
+    <p class="syn">{{ meaning.antonyms.join(", ") }}</p>
+    }
+  </div>
+
+  <!-- <div class="col-1">
+    <div class="noun">
+      <p>verb</p>
+      <hr />
+    </div>
+    <div class="col-1-meaning">
+      <p>Meaning</p>
+      <ul>
+        <li>To type on a computer keyboard.</li>
+      </ul>
+      <p>“Keyboarding is the part of this job I hate the most.”</p>
+    </div>
+  </div> -->
+  }
+</section>
