@@ -1,0 +1,28 @@
+select.font-selector {
+  background: url("../../../assets/images/icon-arrow-down.svg") no-repeat right
+    center;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: var(--ft-size-md);
+  color: var(--text-primary);
+
+  padding-right: 30px; /* Ensure there is enough space for the background image */
+}
+
+select.font-selector option {
+  color: var(--bg-primary);
+}
+
+body.dark-mode select.font-selector {
+  color: var(--white);
+}
+
+body.dark-mode select.font-selector option {
+  color: var(--white);
+}
+
+/* Hiding the default arrow for the select element in IE */
+select::-ms-expand {
+  display: none;
+}
