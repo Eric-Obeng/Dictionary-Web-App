@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.font-theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.font-theme .line {
+  background-color: var(--grey-primary);
+  width: 0.5px;
+  height: 30px;
+  opacity: 0.4;
+}

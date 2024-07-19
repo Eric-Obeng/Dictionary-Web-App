@@ -1,1 +1,10 @@
-<p>header works!</p>
+<header class="header">
+  <div class="logo">
+    <img src="../../assets/images/logo.svg" alt="book logo" />
+  </div>
+  <div class="font-theme">
+    <app-font-selector (fontChange)="onFontChange($event)" />
+    <span class="line"></span>
+    <app-theme />
+  </div>
+</header>
