@@ -2,5 +2,5 @@
   <app-header (fontChange)="onFontChange($event)" />
   <app-search (wordData)="onWordDataFetched($event)" />
   <app-word-detail [wordDetails]="currentWordDetails" />
-  <app-footer />
+  <app-footer [wordDetails]="currentWordDetails" />
 </div>
