@@ -80,7 +80,14 @@ body.dark-mode {
   color: var(--white);
 }
 
+body.dark-mode .moon svg path {
+  stroke: var(--clr-purple-light);
+}
 
-body.dark-mode .moon svg {
-  stroke: var(--clr-purple);
+.switch .toggle {
+  background-color: var(--grey-primary);
+}
+
+body.dark-mode .switch .toggle {
+  background-color: var(--clr-purple-light);
 }
