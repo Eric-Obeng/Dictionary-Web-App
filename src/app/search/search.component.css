@@ -23,11 +23,13 @@
   background: none;
   font-size: var(--ft-size-md);
   font-weight: 700;
+  font-family: inherit;
 }
 
 .search .search-input::placeholder {
   font-style: italic;
   opacity: 0.4;
+  font-family: inherit;
 }
 
 .search .search-button {
@@ -45,3 +47,22 @@
   font-size: var(--ft-size-md);
   margin-top: 0.5rem;
 }
+
+.no-definitions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.no-definitions .emoji {
+  margin-bottom: 0.4rem;
+  font-size: var(--ft-size-lg);
+}
+
+.no-definitions .title {
+  font-size: var(--ft-size-md);
+  font-weight: 700;
+}
+

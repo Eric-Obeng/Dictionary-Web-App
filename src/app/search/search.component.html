@@ -26,4 +26,13 @@
 </div>
 @if (errorMessage) {
 <p class="error-message">{{ errorMessage }}</p>
+} @if (noDefinitionsFound) {
+<div class="no-definitions">
+  <p class="emoji">😕</p>
+  <p class="title">No Definitions Found</p>
+  <p>
+    Sorry pal, we couldn't find definitions for the word you were looking for.
+    You can try the search again at a later time or head to the web instead.
+  </p>
+</div>
 }
