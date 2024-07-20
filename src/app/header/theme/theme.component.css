@@ -2,20 +2,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .switch .toggle {
   display: flex;
   align-items: center;
+  /* justify-content: center; */
   position: relative;
-  flex-shrink: 0;
-  width: 40px;
+  /* flex-shrink: 0; */
+  width: 42px;
   height: 20px;
   border-radius: 20px;
-  background-color: var(--clr-purple-light);
   cursor: pointer;
+  transition: 0.3s;
 }
+
 
 .switch .toggle input[type="radio"] {
   display: none;
@@ -23,25 +25,19 @@
 
 .switch .toggle .toggle-btn {
   position: absolute;
-  /* top: 2px;
-  left: 2px; */
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: white;
   transition: 0.3s;
-  margin: auto 3px;
+  margin-left: 3px;
 }
 
 .switch .toggle .toggle-btn.dark-mode {
-  transform: translate(20px);
+  right: 0;
+  margin-right: 3px;
 }
-
 
 .switch .moon {
   margin-left: 8px;
-}
-
-body.dark-mode .moon svg {
-  stroke: var(--clr-purple);
 }
