@@ -1,5 +1,5 @@
 <section class="word-meaning-container">
-  @for (meaning of meanings; track $index) {
+  @for (meaning of meanings; track trackByFn) {
 
   <div class="col-1">
     <div class="noun">
@@ -11,7 +11,9 @@
       <ul>
         @for (definition of meaning.definitions; track $index) {
         <li>{{ definition.definition }}</li>
-        }
+        @if (definition.example) {
+        <p>"{{ definition.example }}"</p>
+        } }
       </ul>
     </div>
   </div>
@@ -19,14 +21,30 @@
   <div class="col-2">
     @if (meaning.synonyms.length) {
     <p class="title">Synonyms</p>
-    <p class="syn">{{ meaning.synonyms.join(", ") }}</p>
-    }
+    @for (synonym of meaning.synonyms; track trackByFn) {
+    <p
+      class="syn"
+      (click)="onSynonymClick(synonym)"
+      (mouseover)="underline($event)"
+      (mouseout)="removeUnderline($event)"
+    >
+      {{ synonym }}
+    </p>
+    } }
   </div>
   <div class="col-2">
     @if (meaning.antonyms.length) {
     <p class="title">Antonyms</p>
-    <p class="syn">{{ meaning.antonyms.join(", ") }}</p>
-    }
+    @for (antonym of meaning.antonyms; track trackByFn) {
+    <p
+      class="syn"
+      (click)="onSynonymClick(antonym)"
+      (mouseover)="underline($event)"
+      (mouseout)="removeUnderline($event)"
+    >
+      {{ antonym }}
+    </p>
+    } }
   </div>
   }
 </section>

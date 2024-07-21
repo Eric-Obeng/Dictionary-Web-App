@@ -84,20 +84,13 @@
   cursor: pointer;
 }
 
-/* .col-3 .verb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.col-3 .verb p {
-  font-size: var(--ft-size-md);
-  font-style: italic;
-  font-weight: 600;
-} */
-
 .noun hr {
   flex: 2;
   color: var(--grey-primary);
+}
+
+@media (min-width: 768px) {
+  .col-1 .col-1-meaning ul {
+    margin-left: 20px;
+  }
 }

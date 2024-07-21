@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { DictionaryService } from '../service/dictionary.service';
+import { error } from 'console';
+import { SharedService } from '../service/shared.service';
 
 @Component({
   selector: 'app-meaning',
@@ -9,4 +12,28 @@ import { Component, Input } from '@angular/core';
 })
 export class MeaningComponent {
   @Input() meanings: any[] = [];
+
+  constructor(private sharedService: SharedService) {}
+
+  ngOnInit(): void {}
+
+  trackByFn(index: number, item: any): number {
+    return index;
+  }
+
+  underline(event: Event) {
+    (event.target as HTMLElement).style.textDecoration = 'underline';
+  }
+
+  removeUnderline(event: Event) {
+    (event.target as HTMLElement).style.textDecoration = 'none';
+  }
+
+  onSynonymClick(synonym: string) {
+    this.sharedService.setCurrentWord(synonym);
+  }
+
+  onAntonymClick(antonym: string) {
+    this.sharedService.setCurrentWord(antonym);
+  }
 }
