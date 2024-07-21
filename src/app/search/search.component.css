@@ -5,13 +5,12 @@
   width: 100%;
   height: 3rem;
   padding: 1.2rem;
-  background-color: var(--grey-light);
   border-radius: 15px;
   gap: 5px;
   border: 2px solid transparent;
 }
 
-.search:focus {
+.search:focus-within {
   border: 2px solid var(--clr-purple-light);
   cursor: pointer;
 }
@@ -33,7 +32,7 @@
 }
 
 .search .search-button {
-  background-color: none;
+  background: none;
   border: none;
   cursor: pointer;
 }
@@ -65,4 +64,3 @@
   font-size: var(--ft-size-md);
   font-weight: 700;
 }
-

@@ -3,7 +3,8 @@
     type="text"
     [(ngModel)]="word"
     (input)="onInput()"
-    placeholder="Type word here"
+    (keydown.enter)="onSearch()"
+    placeholder="Search for any word..."
     class="search-input"
   />
   <button class="search-button" (click)="onSearch()">

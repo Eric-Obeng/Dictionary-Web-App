@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { DictionaryService } from '../service/dictionary.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SharedService } from '../service/shared.service';
 
 @Component({
   selector: 'app-search',
@@ -14,25 +15,30 @@ export class SearchComponent {
   word: string = '';
   @Output() wordData = new EventEmitter<any>();
   errorMessage: string = '';
-  errerMessage: string = '';
+  // errerMessage: string = '';
   noDefinitionsFound: boolean = false;
 
-  constructor(private dictionaryService: DictionaryService) {}
+  constructor(
+    private dictionaryService: DictionaryService,
+    private sharedService: SharedService
+  ) {
+    this.sharedService.currentWord$.subscribe((word) => {
+      this.word = word;
+      if (this.word) {
+        this.onSearch();
+      }
+    });
+  }
 
   onSearch() {
     if (this.word.trim()) {
-      this.errerMessage = '';
+      this.errorMessage = '';
       this.noDefinitionsFound = false;
-      this.dictionaryService.fetchWord(this.word.trim()).subscribe(
+      this.dictionaryService.searchWord(
+        this.word.trim(),
         (data) => {
-          if (data.length === 0) {
-            this.noDefinitionsFound = true;
-            this.wordData.emit(null);
-          } else {
-            this.wordData.emit(data[0]);
-            this.noDefinitionsFound = false;
-            console.log(data[0]);
-          }
+          this.wordData.emit(data);
+          this.noDefinitionsFound = false;
         },
         (error) => {
           this.noDefinitionsFound = true;
