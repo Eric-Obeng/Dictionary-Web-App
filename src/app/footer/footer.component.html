@@ -1,6 +1,20 @@
 @if (wordDetails) {
-<footer>
-  <p>Source</p>
-  <a target="_blank" href="">{{ wordDetails.sourceUrls }}</a>
+<footer class="footer">
+  <hr />
+  <div class="footer__link-div">
+    <p class="footer--title">Source</p>
+    <div class="links">
+      <a class="footer--link" target="_blank" [href]="wordDetails.sourceUrls">{{
+        wordDetails.sourceUrls
+      }}</a>
+      <a target="_blank" [href]="wordDetails.sourceUrls">
+        <img
+          class="footer--logo"
+          src="../../assets/images/icon-new-window.svg"
+          alt="new-window-icon"
+        />
+      </a>
+    </div>
+  </div>
 </footer>
 }

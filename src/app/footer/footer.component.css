@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.footer__link-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer--title {
+  font-size: var(--ft-size-md);
+  color: var(--grey-primary);
+  text-decoration: underline;
+}
+
+.links {
+  display: flex;
+  gap: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .footer__link-div {
+    flex-direction: row;
+  }
+}
