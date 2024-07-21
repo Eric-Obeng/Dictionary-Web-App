@@ -36,6 +36,7 @@
 
 .word-detail .play-word svg g {
   fill: #e8d0fb;
+  transition: all 0.2s;
 }
 
 .word-detail .play-word svg:hover g {
@@ -44,6 +45,7 @@
 
 .word-detail .play-word svg g path {
   fill: #a445ed;
+  transition: all 0.2s;
 }
 
 .word-detail .play-word svg:hover g path {
