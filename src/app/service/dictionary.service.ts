@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { error } from 'console';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 @Injectable({
@@ -21,7 +22,22 @@ export class DictionaryService {
     return this.searchResultsSubject.asObservable();
   }
 
-  testSearch() {
-    this.fetchWord('keybord');
+  searchWord(
+    query: string,
+    onSuccess: (data: any) => void,
+    onError: (error: string) => void
+  ): void {
+    this.fetchWord(query).subscribe(
+      (data: any) => {
+        if (data.length === 0) {
+          onError('No definitions found');
+        } else {
+          onSuccess(data[0]);
+        }
+      },
+      () => {
+        onError('Error fetching word data');
+      }
+    );
   }
 }
