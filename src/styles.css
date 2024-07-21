@@ -84,10 +84,33 @@ body.dark-mode .moon svg path {
   stroke: var(--clr-purple-light);
 }
 
+.search {
+  background-color: var(--grey-light);
+}
+
+body.dark-mode .search .search-input {
+  color: var(--white);
+}
+
+body.dark-mode .search {
+  background-color: var(--bg-color-1);
+}
+
 .switch .toggle {
   background-color: var(--grey-primary);
 }
 
 body.dark-mode .switch .toggle {
   background-color: var(--clr-purple-light);
+}
+
+.links a:visited,
+.links a:link {
+  color: var(--bg-color-2);
+  font-weight: 700;
+}
+
+body.dark-mode .links a:visited,
+.links a:link {
+  color: var(--white);
 }
