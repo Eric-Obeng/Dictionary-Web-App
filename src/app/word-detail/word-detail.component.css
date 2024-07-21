@@ -34,8 +34,20 @@
   cursor: pointer;
 }
 
-.word-detail .play-word svg:hover {
-  fill: red;
+.word-detail .play-word svg g {
+  fill: #e8d0fb;
+}
+
+.word-detail .play-word svg:hover g {
+  fill: #a445ed;
+}
+
+.word-detail .play-word svg g path {
+  fill: #a445ed;
+}
+
+.word-detail .play-word svg:hover g path {
+  fill: #fff;
 }
 
 .play-word svg {
