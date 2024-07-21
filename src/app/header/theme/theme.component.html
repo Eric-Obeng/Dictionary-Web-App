@@ -1,5 +1,5 @@
 <label class="switch">
-  <div class="toggle">
+  <div class="toggle" (click)="toggleTheme($event)">
     <input type="radio" class="ligth-mode" [checked]="isDarkMode" />
     <input type="radio" class="dark-mode" [checked]="!isDarkMode" />
     <span
