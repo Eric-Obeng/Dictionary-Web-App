@@ -11,7 +11,7 @@
   border: 2px solid transparent;
 }
 
-.search:hover {
+.search:focus {
   border: 2px solid var(--clr-purple-light);
   cursor: pointer;
 }
