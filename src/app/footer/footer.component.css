@@ -23,7 +23,10 @@
 }
 
 .links .footer--link {
-  width: 200px;
+  font-size: var(--ft-size-sm);
+  color: var(--grey-primary);
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 @media (min-width: 768px) {
