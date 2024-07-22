@@ -22,12 +22,16 @@
   gap: 0.7rem;
 }
 
-.links .footer--link{
+.links .footer--link {
   width: 200px;
 }
 
 @media (min-width: 768px) {
   .footer__link-div {
     flex-direction: row;
+  }
+
+  .links .footer--link {
+    width: 100%;
   }
 }
